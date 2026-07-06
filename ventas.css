@@ -188,3 +188,9 @@ CELULARES MUY PEQUEÑOS
     }
 
 }
+
+.error {
+    color: red;
+    font-style: italic;
+    font-size: 12px;
+}

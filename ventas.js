@@ -10,23 +10,48 @@ function calcularComision(numeroVentas, PrecioProducto){
     return comision
 }
 
-function validarVentas(){
-    let numeroVentasStr = recuperarTexto("txtVentas");
 
-    if (numeroVentasStr.length > 5){
-        alert("Máximo 5 caracteres");
+function validarCampo(valor, idError) {
+    const error = document.getElementById(idError);
+
+    if (valor === "") {
+        error.textContent = "El campo no puede estar vacío";
+        error.className = "error";
         return false;
-    }else{
-        return true;
     }
+
+    if (!/^\d+$/.test(valor)) {
+        error.textContent = "Solo se permiten números";
+        error.className = "error";
+        return false;
+    }
+
+    if (valor.length > 5) {
+        error.textContent = "Máximo 5 dígitos";
+        error.className = "error";
+        return false;
+    }
+
+    error.textContent = "";
+    return true;
 }
 
+function validarSueldo() {
+    const valor = document.getElementById("txtSueldosBase").value;
+    return validarCampo(valor, "errSueldo");
+}
+
+function validarVentas() {
+    const valor = document.getElementById("txtVentas").value;
+    return validarCampo(valor, "errVentas");
+}
+
+function validarPrecio() {
+    const valor = document.getElementById("txtPrecio").value;
+    return validarCampo(valor, "errPrecio");
+}
 
 function calcular(){
-
-    if (validarVentas()== false){
-        return;
-    }
 
     //recuperamos propiedades de las cajas de texto
     //let cmpSueldoBase = document.getElementById("txtSueldoBase");
