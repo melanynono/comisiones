@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Calculadora de Comisiones</title>
     <link rel="stylesheet" href="ventas.css">
+    <script src="utilitarios.js"></script>
 </head>
 <body>
 
@@ -14,7 +15,7 @@
         <input type="text" id="txtSueldoBase">
 
         <label>Número de ventas:</label>
-        <input type="text" id="txtVentas">
+        <input type="text" id="txtVentas" onblur="validarVentas();">
 
         <label>Precio del producto:</label>
         <input type="text" id="txtPrecio">
