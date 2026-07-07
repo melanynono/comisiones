@@ -71,7 +71,7 @@ function calcular(){
     
     //convertimos el texto a numero
 
-    let sueldoBase = recuperarFloat("txtSueldoBase");
+    let sueldoBase = recuperarFloat("txtSueldosBase");
     let numeroVentas = recuperarFloat("txtVentas");
     let PrecioProducto = recuperarFloat("txtPrecio");
 
@@ -79,9 +79,11 @@ function calcular(){
 
     let total = sueldoBase + comision;
 
-    mostrarEnSpan("spSueldoBase", sueldoBase);
-    mostrarEnSpan("spComision", comision);
-    mostrarEnSpan("spTotal", total);
+    let spSueldoBase = document.getElementById("spSueldoBase");
+    let spComision = document.getElementById("spComision");
+    let spTotal = document.getElementById("spTotal");
 
-
-}
+    spSueldoBase.textContent = sueldoBase;
+    spComision.textContent = comision;
+    spTotal.textContent = total;
+    }
